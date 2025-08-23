@@ -27,7 +27,6 @@ class AgentTest():
     def senior_market_researcher(self) -> Agent:
         return Agent(
             config=self.agents_config['senior_market_researcher'], # type: ignore[index]
-            tools=[SerperDevTool(),ScrapeWebsiteTool()],
             verbose=True
             
             
@@ -54,6 +53,7 @@ class AgentTest():
     def research_task(self) -> Task:
         return Task(
             config=self.tasks_config['research_task'], # type: ignore[index]
+            tools=[SerperDevTool(),ScrapeWebsiteTool()],
         )
 
     @task

@@ -1,6 +1,6 @@
 research_task:
   description: >
-    Conduct a thorough market research about {topic}
+    Conduct a thorough market research about {topic} using the tools provided to you
     Make sure you find interesting and relevant information given
     the current year is {current_year}.
   expected_output: >
@@ -16,12 +16,10 @@ reporting_task:
     Formatted as markdown without '```'
   agent: reporting_analyst
 
-
-
 copywriting_task:
-    description: >
-      Create a blog post about {topic} that is engaging and informative and make people want to take action to buy.
-    expected_output: >
-      A well-written blog post that captures the essence of {topic} and provides value to the reader and makes them want to take action.
-    agent: copywriter
-    context: [research_task, reporting_task]
+  description: >
+    Create a blog post about {topic} that is engaging and informative and make people want to take action to buy.
+  expected_output: >
+    A well-written blog post that captures the essence of {topic} and provides value to the reader and makes them want to take action.
+  agent: copywriter
+  context: [research_task, reporting_task]
