@@ -15,11 +15,14 @@ reporting_task:
     A fully fledged report with the main topics, each with a full section of information.
     Formatted as markdown without '```'
   agent: reporting_analyst
+  output_file: output/report.md
 
 copywriting_task:
   description: >
     Create a blog post about {topic} that is engaging and informative and make people want to take action to buy.
   expected_output: >
     A well-written blog post that captures the essence of {topic} and provides value to the reader and makes them want to take action.
+    Formatted as markdown without '```'
   agent: copywriter
   context: [research_task, reporting_task]
+  output_file: output/copywriting_blog_post.md

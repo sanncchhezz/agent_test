@@ -60,14 +60,11 @@ class AgentTest():
     def reporting_task(self) -> Task:
         return Task(
             config=self.tasks_config['reporting_task'], # type: ignore[index]
-            output_file='report.md'
         )
-
     @task
     def copywriting_task(self) -> Task:
         return Task(
             config=self.tasks_config['copywriting_task'], # type: ignore[index]
-            output_file='copywriting_blog_post.md'
         )
 
     @crew
