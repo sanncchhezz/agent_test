@@ -17,9 +17,30 @@ def run():
     """
     Run the crew.
     """
+    while True:
+        topic = input("Enter the topic for the crew to work on: ").strip()
+        if topic:
+            break
+        else:
+            print("Topic cannot be empty. Please enter a valid topic.")
+
+    while True:
+        year = input("Enter the current year (leave empty for current year): ").strip()
+        if not year:
+            year = str(datetime.now().year)
+            break
+        try:
+            year_int = int(year) 
+            if year_int > datetime.now().year:
+                raise ValueError("Year out of range")
+            year = str(year_int)
+            break
+        except ValueError:
+            print("Invalid year. Please enter a valid year.")
+    
     inputs = {
-        'topic': 'AI Agents ',
-        'current_year': str(datetime.now().year)
+        'topic': topic,
+        'current_year': year
     }
     
     try:
